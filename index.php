@@ -1,3 +1,3 @@
 <?php
-	echo "localhost";
+	echo "localhost";exit;
 ?>
