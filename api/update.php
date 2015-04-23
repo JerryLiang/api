@@ -11,6 +11,7 @@ include_once BASEPATH . 'config/database.php';
 include_once INCLUDE_PATH . 'libraries/Auth.class.php';
 include_once BASEPATH . 'model/api.php';
 
+<<<<<<< HEAD
 $input = new CI_Input();
 $lang = CLIENT_LANGUAGE;
 $lang = !empty($lang) ? $lang : $input->get_post('lang');
@@ -38,5 +39,25 @@ $reVal = array('content' => '', 'status' => 103);
 	}
 	unset($upinfo);
 //}
+=======
+$auth = Auth::getInstance($dbconfig['mainuser']);
+$reVal = array('content' => '','status' => 103);
+if (!$auth->verify()) {
+    $reVal['content'] = _display_error('101');
+    $reVal['status'] = 101;
+} else {
+    $version = CLIENT_VERSION; 
+    $api = new api_model();
+    $upinfo = $api->get_upgrate();
+    if (!empty($upinfo) && is_array($upinfo)) {
+        $reVal['status'] = 0;
+        $reVal['upgrate'] = $upinfo;
+    } else {
+        $reVal['status'] = 154;
+        $reVal['content'] = _display_error('154') . "(" . $version . ")";
+    }
+    unset($upinfo);
+}
+>>>>>>> b9a688ea130c7f77368aff79e27ba30aee5b24c7
 echo json_encode($reVal);
 ?>

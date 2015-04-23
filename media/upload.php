@@ -71,5 +71,9 @@ switch ($format) {
 		_logger(_LL_DEBUG, "\n uploadfile=" . print_r($list, true).',len:'.$c);
 		header("Content-Length: ".$c);
         echo $list;
+        echo json_encode($return);
+        break;
+    case 'txt' :
+        echo "status:" . $status . "content:" . $content . "url:" . $url . "media:" . $filetype;
         break;
 }

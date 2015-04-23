@@ -22,14 +22,13 @@ $reVal = array('content' => '', 'status' => 103);
 if (empty($mobile)) {
 	$reVal['content'] = _display_error('102');
 	$reVal['status'] = 102;
-} elseif (preg_match("/^1[0-9]{10}$/", $mobile)) {
+} elseif (!preg_match("/^\d{6,21}$/", $mobile)) {
 	$reVal['content'] = _display_error('120');
 	$reVal['status'] = 120;
 } else {
 	$user = new user_model();
 	$usertinfo = $user->get_user_info("username", $mobile);
 	$imuserinfo= $user->check_im_user($mobile);
-    if($imuserinfo)
 	if (!empty($usertinfo)) {
 		$sms = new SmsGateway();
 		$msg = "您的阿哩咕哩账号：" . $usertinfo['username'] . " ，密码：" . $auth->decrypt($usertinfo['userpass']) . " 请您妥善保管好！";

@@ -57,16 +57,8 @@
 	</div>
 </div>
 <?php
-//$lang ='cn';
-//$lang_list = array('cn','en'); //目前支持语言
-//foreach($lang_list as $v){
-//    $ret = stripos($lang,$v);
-//    if($ret !== false) {
-//        $language = $v;
-//        break;
-//    }
-//}
-//echo $language;exit;
+//$p = preg_match("/^\d{6,24}$/", '1231222222224');
+//var_dump(!preg_match("/^\d{6,24}$/", '123122g2222224'));
 ?>
 </body>
 </html>

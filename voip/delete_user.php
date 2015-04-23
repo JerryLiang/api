@@ -21,5 +21,5 @@ $voip->delete_im_user($mobile);
 $voip->delete_data('T_phone_info',array('mobile'=>$mobile));
 $voip->delete_data('T_group_info',array('mobile'=>$mobile));
 $voip->delete_data('T_user_imei',array('mobile'=>$mobile));
-$voip->delete_data('T_user_info',array('username'=>$mobile));
+$ret = $voip->delete_data('T_user_info',array('username'=>$mobile));
 var_dump($ret);exit;

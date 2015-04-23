@@ -7,6 +7,7 @@
 define("BASEPATH", dirname(__FILE__) . '/');
 include_once BASEPATH . 'config/system.php';
 include_once BASEPATH . 'config/conf.php';
+<<<<<<< HEAD
 include_once INCLUDE_PATH . 'config/common.config.php';
 include_once BASEPATH . 'config/imserver.config.php';
 include_once INCLUDE_PATH . 'libraries/Redis.class.php';
@@ -39,6 +40,23 @@ if (!empty($format) && ($format == 'json' || $format == 'txt')) {
 			$c = strlen($list);
 			header("Content-Length: ".$c);
 			echo $list;
+=======
+
+$input = new CI_Input();
+$format = trim($input->get_post('format'));
+if (!empty($format) && ($format == 'json' || $format == 'txt')) {
+    switch ($format) {
+        case 'json' :
+            $return = array(
+                'type' => 'im',
+                'ip' => '121.40.144.58',
+                'port' => 6688
+            );
+            echo json_encode($return);
+            break;
+        case 'txt' :
+            echo "type:im,ip:121.40.144.58,port:6688";
+>>>>>>> b9a688ea130c7f77368aff79e27ba30aee5b24c7
             break;
     }
 }

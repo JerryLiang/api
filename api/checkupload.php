@@ -52,7 +52,7 @@ if (empty($imei) || empty($action)) {
 				if (empty($item['agent'])) {
 					$checkdata = array('agent' => $agent, 'model' => $model, 'checktime' => date("Y-m-d H:i:s"));
 					$user->update_userinfo('T_phone_info', 'imei', $imei, $checkdata);
-				} elseif ($item['agent'] == $agent && $item['agent'] == $model) {
+				} elseif ($item['agent'] == $agent && $item['model'] == $model) {
 				} else {
 					$checkdata = array('agent' => $agent, 'model' => $model);
 					$user->update_userinfo('T_phone_info', 'imei', $imei, $checkdata);

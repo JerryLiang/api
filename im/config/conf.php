@@ -16,4 +16,3 @@ define('MAX_LOG_LEVEL', 4);
 define('IOS_PEM','/home/webtronics/htdocs/api/im/config/ApnsCertificateFile/apple_push_notification_production.pem');
 define('FUN_PEM','/home/webtronics/htdocs/api/im/config/ApnsCertificateFile/magic-dev.pem');
 define('COM_PEM','/home/webtronics/htdocs/api/im/config/ApnsCertificateFile/magic-dis-企业版.pem');
-

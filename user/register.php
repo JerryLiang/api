@@ -28,10 +28,10 @@ if (empty($username) || empty($pwd)) {
 } elseif (preg_match_all('/[\x{4e00}-\x{9fff}]+/u', $username, $matches)) {
 	$reVal['content'] = _display_error('139');
 	$reVal['status'] = 139;
-} elseif (strlen($username) < 6 || strlen($username) > 24) {
-	$reVal['content'] = _display_error('140');
-	$reVal['status'] = 140;
-} elseif ($pwd != md5($udid . $mac . $username . $upass . "#1QWE")) {
+}elseif(!preg_match("/^\d{6,24}$/",$username)){
+    $reVal['content'] = _display_error('120');
+    $reVal['status'] = 120;
+}elseif ($pwd != md5($udid . $mac . $username . $upass . "#1QWE")) {
 	$reVal['content'] = _display_error('1022');
 	$reVal['status'] = 1022;
 } elseif ($user->check_user($username)) {

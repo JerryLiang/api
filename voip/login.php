@@ -17,6 +17,8 @@ $mobile = trim($input->get_post('mobile'));
 $imei = trim($input->get_post('imei'));
 $code = trim($input->get_post('code'));
 $country = trim($input->get_post('country'));
+$agent = trim($input->get_post('agent'));
+$model = trim($input->get_post('model'));
 if (CLIENT_PLATFORM == 'iphone' || CLIENT_PLATFORM == 'android') {
     $format = 'json';
 } else {
@@ -78,13 +80,13 @@ if (trim($code) != $verify_code) {
                 if (!empty($items)) {
                     if (!empty($items['mobile'])) {
                         $voip->update_data($_table, array('imei' => $imei), array('imei' => '', 'status' => 0, 'country' => $country));
-                        $voip->insert_data($_table, array('imei' => $imei, 'mobile' => $mobile, 'status' => 0, 'country' => $country));
+                        $voip->insert_data($_table, array('imei' => $imei, 'mobile' => $mobile, 'status' => 0, 'country' => $country,'agent'=>$agent,'model'=>$model));
                         _logger(_LL_DEBUG,'未注册,imei,'.$imei.',mobile:'.$mobile);
                     } else {
                         $voip->update_data($_table, array('imei' => $imei), array('mobile' => $mobile, 'status' => 0, 'country' => $country));
                     }
                 } else {
-                    $voip->insert_data($_table, array('imei' => $imei, 'mobile' => $mobile, 'status' => 0, 'country' => $country));
+                    $voip->insert_data($_table, array('imei' => $imei, 'mobile' => $mobile, 'status' => 0, 'country' => $country,'agent'=>$agent,'model'=>$model));
                 }
                 $status = '181';
             } else {

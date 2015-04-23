@@ -245,6 +245,7 @@ function get_device() {
             }
             //暂时解决意大利语问题，默认英文
             if(empty($language)) $language='en';
+            if(empty($language)) $language='en';
 			define('CLIENT_LANGUAGE',$language);
 		}
 	}

@@ -26,18 +26,18 @@ if (empty($username) || empty($action)) {
 	$reVal['content'] = _display_error('101');
 	$reVal['status'] = 101;
 } else {
-	$user = new user_model();
-	if (!empty($_FILES['pic']['name'])) {
-		$data = uploadFile($_FILES['pic'], '/head');
+$user = new user_model();
+if (!empty($_FILES['pic']['name'])) {
+	$data = uploadFile($_FILES['pic'], '/head');
 
-		$photo_path = $data['path'];
-		// 删除临时文件
-		deleteFile($_FILES['pic']['tmp_name']);
-		if (isset($data['error']) && $data['error'] === 0) {
-			switch ($action) {
-				case 'cdma': //老人机
-					//管理员
-					$info = $user->check_record("select id from `T_group_info` WHERE  `isadmin`='" . $username . "' limit 1");
+	$photo_path = $data['path'];
+	// 删除临时文件
+	deleteFile($_FILES['pic']['tmp_name']);
+	if (isset($data['error']) && $data['error'] === 0) {
+		switch ($action) {
+			case 'cdma': //老人机
+				//管理员
+				$info = $user->check_record("select id from `T_group_info` WHERE  `isadmin`='" . $username . "' limit 1");
 					if ($info) {
 						if (!empty($photo_path)) {
 							$query = $auth->_main_user_db->query("update T_phone_info set headimag='" . $photo_path . "' where mobile='" . $mobile . "'");
