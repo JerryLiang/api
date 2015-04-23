@@ -9,4 +9,8 @@
 define('USERINFO_CACHE_SERVER', 'tcp://10.168.24.32:11211');
 
 // 缓存服务器
+<<<<<<< HEAD
 define('REDIS_CACHE_SERVER', 'tcp://root:mobile_2014_ff@10.168.24.32:6379');
+=======
+define('REDIS_CACHE_SERVER', 'tcp://root:mobile_2014_ff@10.168.24.32:6379');
+>>>>>>> 63b94a7e1b4167248a21999ae09c4dde81b786e9
