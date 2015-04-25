@@ -74,3 +74,126 @@ $statuscode = array(
     "2003" => "Hardware + cloud services + APP way to serve the happy family life",
 ),
 );
+$about = array(
+    'title'=>'about',
+    'content'=>'
+    ALIGULI is an APP developed by shenzhen uoshon communication technology Ltd, which specialized for elder.On the APP, you can know the elder situation anytime, make a family group, talk with voice message, help elder set their mobile phone in long- distance, and you can attention multi-elders in the same time, make an interesting and happy family new style.
+    ',
+    'contact'=>'
+        联系我们<br/>
+		客服热线：<span style="color:#1064f3">0755-26037756</span><br/>
+		服务QQ群：105683391<br/>
+		操作视频：<span style="color:#1064f3">xxxxxxxxxxx</span><br/>
+		微信号：啊哩咕哩
+    ',
+);
+
+$help = array(
+    'content'=>'
+<ul class="decimal" id="QAList">
+        <li>
+            <div class="title">Q:How to register Aliguli?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A:1、Scan QR code or search Aliguli app to set up<br/>
+                        &nbsp;&nbsp;2、Aliguli official downloading and setting up
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to register the Aliguli ID?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A: Choose correct country code and mobile phone number, then set a password.
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to pay close attention to elder?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A: Add device under setting, insert the phone number of senior.
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">How to help elder by remote assistance?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A：click setting, find Add Device<br/>
+                        1.Can set the elder’s information ；<br/>
+                        2.can set contact of elder phone；<br/>
+                        3. SOS contact setting: maximum 5 numbers, can dial automatically one by one and by continuously, till the call is in action.
+。
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to create the right of administrator transfer?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A: Dial setting, shift and transfer the right of administrator, choose the one you would like to change, then confirm.
+
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to invite friends attention elder？</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A: input the phone number of the person invited, then send the invitation
+
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to use voice message?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A: On Aliguli homepage, dial voice tube，press on then speak, maximum speaking time 20s
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to switch attention person?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                        A: On the top right corner of homepage, press switch ?, then you can change any person to attention and know information of elder phone as the on-line situation, battery electric quantity, location and notice of low  electric, etc.
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <div class="title">Q: How to make a call or sent SMS on APP Aliguli?</div>
+            <div class="content">
+                <dl>
+                    <dd>
+                       A: You can find call on the left bottom, SMS on right bottom on the homepage.
+
+                    </dd>
+                </dl>
+            </div>
+        </li>
+    </ul>',
+);

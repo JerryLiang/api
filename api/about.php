@@ -1,10 +1,20 @@
 <!DOCTYPE HTML>
 <html>
+
+<?php
+define("BASEPATH", dirname(__FILE__) . '/');
+include '../include/libraries/Input.php';
+$input = new CI_Input();
+$lang = $input->get('lang');
+echo $lang;exit;
+include '../include/config/lang/lang_'.$lang.'.php'
+?>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 	<meta name="format-detection" content="telephone=no"/>
-	<title>关于我们</title>
+	<title><?php echo $about['title']; ?>
+    </title>
 	<style type="text/css">
 		* {
 			font-family: "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
@@ -45,15 +55,11 @@
 				<img alt="" src="../include/images/icon.png" style="width:90px;margin-bottom:-4px;margin-right:4px;"/>
 			</p>
 			<p>
-				Aliguli是一款由深圳优合胜通信有限公司出品的专注关爱家人，亲友的应用，能轻松实现实时定位，实时口信交流，实时关注老人动态，组建家庭关爱群，远程帮助老人设置通讯录等功能，建立欢乐和谐的新型家庭生活方式。
+                <?php echo $about['content'] ?>
 			</p>
 
 		</div>
-		联系我们<br/>
-		客服热线：<span style="color:#1064f3">0755-26037756</span><br/>
-		服务QQ群：105683391<br/>
-		操作视频：<span style="color:#1064f3">xxxxxxxxxxx</span><br/>
-		微信号：啊哩咕哩
+		<?php echo $contact; ?>
 	</div>
 </div>
 <?php

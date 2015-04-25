@@ -1,10 +1,18 @@
 <!DOCTYPE HTML>
 <html>
+<?php
+define("BASEPATH", dirname(__FILE__) . '/');
+include '../include/libraries/Input.php';
+$input = new CI_Input();
+$lang = $input->get('lang');
+echo $lang;exit;
+include '../include/config/lang/lang_'.$lang.'.php'
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
-    <title>帮助</title>
+    <title><?php echo $about['title']; ?></title>
     <style type="text/css">
         * {
             font-family: "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
@@ -106,111 +114,8 @@
 
 <body>
 <div id="main">
-    <ul class="decimal" id="QAList">
-        <li>
-            <div class="title">如何注册啊哩咕哩？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：A、扫二维码或者搜索“啊哩咕哩”（Aliguli）进行安装<br/>
-                            &nbsp;&nbsp;B、啊哩咕哩官方下载安装
 
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何注册啊哩咕哩账号？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：选择正确的国家码及正确填写手机号码，设定密码即可注册。
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何关注？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：在设置，添加关注，输入被关注者手机号码即可。
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何实现远程协助</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：点击设置可以看到管理关注。<br/>
-                        1、可设置被关注者的资料；<br/>
-                        2、被关注者的电话本，包括名字和号码均可设置；<br/>
-                        3、被关注者SOS联系人设置，可最多设置5个号码，紧急情况可连续拨打，直到通话。
-
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何实现管理员权限转移？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：点击设置，转入转移管理员权限，选择需要更换的人员，确认即可。
-
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何邀请好友关注？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：输入被邀请人手机号码，发送邀请码即可。
-
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何使用口信？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：啊哩咕哩首页，点击话筒转至口信页面，点击按住说话功能条即可，口信时长20秒。口信发送后，可实现群员共享。
-
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何切换关注对象？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：在首页的右上角，点击切换设备，可任意选择需要切换的对象，切换成功后，可获取被关注对象的相关信息，包括上线状态、手机电量、地理位置、低电通知等功能。
-
-                    </dd>
-                </dl>
-            </div>
-        </li>
-        <li>
-            <div class="title">如何实现在啊哩咕哩拨打或者发送信息？</div>
-            <div class="content">
-                <dl>
-                    <dd>
-                        答：在首页的左下角有拨打电话功能，右下角有发送短信功能，均可及时使用。
-
-                    </dd>
-                </dl>
-            </div>
-        </li>
-
-    </ul>
-
+<?php echo $content; ?>
 </div>
 <script type="text/javascript" src="../include/js/zepto.min.js"></script>
 <script type="text/javascript">
