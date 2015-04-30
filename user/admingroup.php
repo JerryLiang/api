@@ -27,9 +27,6 @@ $img_url_prefix = $url_prefixs[array_rand($url_prefixs)];
 if (empty($username) || empty($mobile) || empty($action)) {
     $reVal['content'] = _display_error('102');
     $reVal['status'] = 102;
-} elseif (!$auth->verify()) {
-    $reVal['content'] = _display_error('101');
-    $reVal['status'] = 101;
 } else {
     $imdata = array('master' => $mobile, 'member' => $username);
     $user = new user_model();
@@ -159,10 +156,11 @@ if (empty($username) || empty($mobile) || empty($action)) {
                                 $val = reg_voip($mobile);
                             $val = json_decode($val, true);
                             $auth->_main_user_db->insert("T_voip_info", array('mobile' => $mobile, 'imei' => $par['imei'], 'status' => $val['status'], 'info' => $val['info']));
-                            if (!$val['status']) {
-                                //检测机器是否绑定voip
+//                             重新激活，不需要检测voip是否注册过
+//                            if (!$val['status']) {
                                 $auth->_main_user_db->where('imei', $par['imei']);
                                 $query = $auth->_main_user_db->get('T_voip_imei');
+                                //检测机器是否绑定voip
                                 $n = $query->num_rows();
                                 if (empty($n)) {
                                     $query = $auth->_main_user_db->query("SELECT * FROM `T_voip_imei` WHERE `imei`= '' limit 0,1");
@@ -178,7 +176,7 @@ if (empty($username) || empty($mobile) || empty($action)) {
                                 if (!$chg['status']) {
                                     $auth->_main_user_db->query("update T_voip_imei set status = 1,imei='" . $par['imei'] . "' where id = '" . $cid . "'");
                                 }
-                            }
+//                            }
                         }
                         }
                         $auth->_main_user_db->query("update T_phone_info set status = 1 where mobile='" . $mobile . "'");

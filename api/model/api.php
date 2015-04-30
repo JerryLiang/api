@@ -27,7 +27,7 @@ class api_model
 		}
 
 		$platform = !empty($platform) ? $platform : 'android';
-		$version = !empty($version) ? $version : '1.0.0';
+//		$version = !empty($version) ? $version : '1.0.0';
 		$lang = !empty($lang) ? $lang : 'cn';
 		$ca = !empty($ca) ? $ca : 'default';
 //		$where = "where platform='" . $platform . "'  and status = 1 and lang = '".$lang."' and ca = '".$ca."'";

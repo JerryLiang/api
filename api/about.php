@@ -3,10 +3,12 @@
 
 <?php
 define("BASEPATH", dirname(__FILE__) . '/');
-include '../include/libraries/Input.php';
+include_once BASEPATH . 'config/system.php';
+include_once BASEPATH . 'config/conf.php';
+include_once BASEPATH . 'config/database.php';
+
 $input = new CI_Input();
 $lang = $input->get('lang');
-echo $lang;exit;
 include '../include/config/lang/lang_'.$lang.'.php'
 ?>
 <head>
@@ -59,12 +61,13 @@ include '../include/config/lang/lang_'.$lang.'.php'
 			</p>
 
 		</div>
-		<?php echo $contact; ?>
+		<?php echo $about['contact']; ?>
 	</div>
 </div>
 <?php
 //$p = preg_match("/^\d{6,24}$/", '1231222222224');
 //var_dump(!preg_match("/^\d{6,24}$/", '123122g2222224'));
+echo phpinfo();exit;
 ?>
 </body>
 </html>

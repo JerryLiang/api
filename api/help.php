@@ -2,17 +2,18 @@
 <html>
 <?php
 define("BASEPATH", dirname(__FILE__) . '/');
-include '../include/libraries/Input.php';
+include_once BASEPATH . 'config/system.php';
+include_once BASEPATH . 'config/conf.php';
+include_once BASEPATH . 'config/database.php';
 $input = new CI_Input();
 $lang = $input->get('lang');
-echo $lang;exit;
 include '../include/config/lang/lang_'.$lang.'.php'
 ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
-    <title><?php echo $about['title']; ?></title>
+    <title></title>
     <style type="text/css">
         * {
             font-family: "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
@@ -115,7 +116,7 @@ include '../include/config/lang/lang_'.$lang.'.php'
 <body>
 <div id="main">
 
-<?php echo $content; ?>
+<?php echo $help['content']; ?>
 </div>
 <script type="text/javascript" src="../include/js/zepto.min.js"></script>
 <script type="text/javascript">

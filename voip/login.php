@@ -6,7 +6,6 @@
  * Time: 17:55
  */
 define("BASEPATH", dirname(__FILE__) . '/');
-
 include_once BASEPATH . 'config/conf.php';
 include_once BASEPATH . 'model/voip.php';
 include_once INCLUDE_PATH . 'libraries/SmsGateway.class.php';
@@ -68,7 +67,7 @@ if (trim($code) != $verify_code) {
     } else {
         //避免功能机与智能机重复注册的情况
         if ($voip->check_im_user($mobile)) {
-            $status = '179';
+            $status = '141';
         } else {
 //	注册
                 $items = $voip->get_item($_table, array('imei' => $imei));
@@ -98,5 +97,5 @@ else {
 header("Content-Type: text/html;charset=utf-8");
 header("Content-Length: " . strlen($status));
 _logger(_LL_DEBUG,'login,code:'.$status.',format:'.$format);
-sendput($status, $format);
+sendput(trim($status), $format);
 

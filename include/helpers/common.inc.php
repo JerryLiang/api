@@ -225,7 +225,8 @@ function get_device() {
 				}
 			}
 		}
-		if (!defined('CLIENT_OS')) {
+
+        if (!defined('CLIENT_OS')) {
 			define('CLIENT_OS', strtolower($match[2]));
 		}
 		if (!defined('CLIENT_VERSION')) {
@@ -247,7 +248,8 @@ function get_device() {
 			define('CLIENT_LANGUAGE',$language);
 		}
 	}
-	if (!defined('CLIENT_PLATFORM')) {
+
+    if (!defined('CLIENT_PLATFORM')) {
 		define('CLIENT_PLATFORM', '');
 	}
 	if (!defined('CLIENT_OS')) {
@@ -393,5 +395,5 @@ function format_mobile($mobile){
     }
     return $str;
 }
-?>
+
 
