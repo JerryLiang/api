@@ -261,7 +261,7 @@ function get_device() {
 	if (!defined('CLIENT_LANGUAGE')) {
 		define('CLIENT_LANGUAGE', '');
 	}
-//		echo CLIENT_PLATFORM;exit;
+		echo CLIENT_PLATFORM;exit;
 }
 
 

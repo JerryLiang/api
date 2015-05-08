@@ -8,6 +8,7 @@ include_once BASEPATH . 'config/database.php';
 
 $input = new CI_Input();
 $lang = $input->get('lang');
+$lang = !empty($lang) ? $lang : 'cn';
 include '../include/config/lang/lang_'.$lang.'.php'
 ?>
 <head>

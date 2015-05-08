@@ -13,9 +13,19 @@ $username = $input->get_post('user');
 $message = $input->get_post('msg');
 $url = $input->get_post('url');
 $type = $input->get_post('type');
-
+$conf = $input->get_post('conf');
 $im = new im_model();
 $redis = new RedisInit();
+
+
+if(strlen($conf)>0){
+
+$ret = $im->update_data('T_ios_token',array('username'=>$username),array('option'=>$conf));
+    $reVal['status'] = 0;
+    $reVal['content'] = '设置成功';
+    echo json_encode($reVal);exit;
+}
+
 if ($type == 1) {
 	$result = $im->get_items('T_ios_token');
 //	print_r($result);exit;
@@ -82,11 +92,12 @@ function push_report($username, $message, $redis, $im,$p)
 			}
 			$msg_num = $redis->redis()->incr('msg_num_' . $username);
 
+            $sound = empty($Token['option']) ? 'tips.wav' : '';
 			$body['aps'] = array(
 				'alert' => $message,
 //			'data'  => $data,
 				'badge' => $msg_num,
-				'sound' => 'tips.wav',
+				'sound' => $sound,
 			);
 
 // Encode the payload as JSON

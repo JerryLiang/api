@@ -47,7 +47,7 @@ if (trim($code) != $verify_code) {
 //                if (!empty($ret)) {
 //                    $voip->delete_data($_table, array('imei' => $imei));
                 $voip->update_data($_table, array('imei' => $imei), array('imei' => '', 'status' => 0));
-                $voip->update_data($_table, array('mobile' => $mobile), array('imei' => $imei, 'status' => 0));
+                $voip->update_data($_table, array('mobile' => $mobile), array('imei' => $imei, 'status' => 0,'agent'=>$agent,'model'=>$model));
                 _logger(_LL_DEBUG,'line:'.__LINE__.',已注册,imei,'.$imei.',mobile:'.$mobile);
         }
         if ($item['status'] == 1) {

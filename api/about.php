@@ -9,6 +9,7 @@ include_once BASEPATH . 'config/database.php';
 
 $input = new CI_Input();
 $lang = $input->get('lang');
+$lang = !empty($lang) ? $lang : 'cn';
 include '../include/config/lang/lang_'.$lang.'.php'
 ?>
 <head>
@@ -67,7 +68,7 @@ include '../include/config/lang/lang_'.$lang.'.php'
 <?php
 //$p = preg_match("/^\d{6,24}$/", '1231222222224');
 //var_dump(!preg_match("/^\d{6,24}$/", '123122g2222224'));
-echo phpinfo();exit;
+//echo phpinfo();exit;
 ?>
 </body>
 </html>

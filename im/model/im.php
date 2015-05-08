@@ -41,6 +41,11 @@ class im_model {
 		return $query->row_array();
 	}
 
+    public function update_data($table,$where,$data){
+        $this->main_db->where($where);
+        return $this->main_db->update($table,$data);
+    }
+
     private function &_connect_maindb() {
         global $dbconfig;
         if (isset($this->main_db) && is_object($this->main_db)) {
